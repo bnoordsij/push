@@ -17,8 +17,11 @@ jobs:
     - name: Build the Docker image
       run: docker build . -t ghcr.io/${{ github.repository }}/my-python-app:latest
 
-    - name: Login to GitHub Container Registry
-      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    - name: Docker ls
+      run: docker ls
 
-    - name: Push Docker image to GitHub Container Registry
-      run: docker push ghcr.io/${{ github.repository }}/my-python-app:latest
+#    - name: Login to GitHub Container Registry
+#      run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+#
+#    - name: Push Docker image to GitHub Container Registry
+#      run: docker push ghcr.io/${{ github.repository }}/my-python-app:latest
